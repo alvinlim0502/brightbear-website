@@ -4,60 +4,339 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Bright Bear Preschool</title>
-  <link rel="stylesheet" href="styles.css" />
+  <meta name="description" content="Bright Bear Preschool — warm, play-based learning with strong foundations for primary school." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --brand:#FFB703; /* honey gold */
+      --brand-2:#023047;/* deep blue */
+      --accent:#FB8500; /* orange */
+      --mint:#8EEDD1;
+      --bg:#fffaf2;
+      --ink:#19324a;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:Poppins,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial,sans-serif;color:var(--ink);background:var(--bg)}
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+    .container{width:min(1200px,92%);margin-inline:auto}
+
+    /* Header */
+    header{position:sticky;top:0;z-index:30;background:#fff;box-shadow:0 1px 10px rgba(0,0,0,.06)}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:10px 0}
+    .brand{display:flex;align-items:center;gap:12px}
+    .brand img{width:46px;height:46px;object-fit:contain}
+    .brand .title{font-weight:800;letter-spacing:.3px;color:var(--brand-2)}
+    .brand .subtitle{display:block;font-size:12px;font-weight:600;color:#6b7a8c;margin-top:-6px}
+    nav ul{display:flex;gap:22px;list-style:none;margin:0;padding:0}
+    nav a{font-weight:600}
+    .cta{background:var(--accent);color:white;padding:10px 16px;border-radius:999px;display:inline-flex;align-items:center;gap:10px;font-weight:700}
+    .menu-btn{display:none;background:none;border:0;font-size:28px}
+
+    @media (max-width:900px){
+      nav ul{display:none}
+      .menu-btn{display:inline-block}
+      .mobile{position:absolute;inset:64px 0 auto 0;background:#fff;border-top:1px solid #eee;display:none}
+      .mobile a{display:block;padding:16px 24px;border-bottom:1px solid #f3f3f3}
+      .mobile .cta{margin:12px 24px 24px}
+      .mobile.open{display:block}
+    }
+
+    /* Hero */
+    .hero{position:relative;isolation:isolate}
+    .hero .wrap{display:grid;grid-template-columns:1.2fr .8fr;gap:36px;align-items:center;padding:48px 0}
+    .badge{display:inline-block;background:var(--mint);color:#03423a;font-weight:800;padding:8px 12px;border-radius:999px;font-size:13px;margin-bottom:16px}
+    h1{font-size:clamp(28px,5vw,56px);line-height:1.05;margin:0 0 12px;color:var(--brand-2)}
+    .lead{font-size:clamp(16px,2.3vw,20px);opacity:.9;margin:0 0 24px}
+    .hero-cta{display:flex;gap:12px;flex-wrap:wrap}
+    .card{background:#fff;border-radius:20px;box-shadow:0 10px 30px rgba(2,48,71,.08);padding:22px}
+    .hero .art{position:relative}
+    .shape{position:absolute;inset:auto auto -40px -40px;width:160px;height:160px;background:var(--brand);filter:blur(60px);opacity:.4;z-index:-1;border-radius:50%}
+
+    /* Sections */
+    section{padding:64px 0}
+    .section-title{font-size:clamp(24px,3.4vw,36px);margin:0 0 10px;color:var(--brand-2)}
+    .section-lead{opacity:.85;margin:0 0 30px}
+
+    /* Programs */
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .program{padding:24px;border-radius:18px;background:#fff;border:1px solid #efefef}
+    .program h3{margin:10px 0 6px}
+    .tag{display:inline-block;background:#f6f8fb;color:#29445c;border:1px solid #e9edf2;border-radius:999px;padding:6px 10px;font-size:12px;font-weight:700}
+    @media (max-width:900px){.grid-3{grid-template-columns:1fr}}
+
+    /* Why */
+    .why{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+    .why ul{list-style:none;padding:0;margin:0;display:grid;gap:12px}
+    .why li{background:#fff;border:1px solid #eee;padding:16px 18px;border-radius:16px;font-weight:600}
+    @media (max-width:900px){.why{grid-template-columns:1fr}}
+
+    /* Gallery */
+    .gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+    .gallery img{height:170px;object-fit:cover;border-radius:12px}
+    @media (max-width:900px){.gallery{grid-template-columns:repeat(2,1fr)}}
+
+    /* Testimonials */
+    .testis{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .quote{background:#fff;border:1px solid #eee;border-radius:16px;padding:18px}
+    .quote p{margin:0 0 10px}
+    .author{font-weight:700}
+    @media (max-width:900px){.testis{grid-template-columns:1fr}}
+
+    /* Contact */
+    .contact{display:grid;grid-template-columns:1.1fr .9fr;gap:24px}
+    .contact form{background:#fff;border:1px solid #eee;padding:18px;border-radius:16px}
+    .contact label{display:block;font-weight:700;margin:12px 0 6px}
+    .contact input,.contact textarea{width:100%;padding:12px 14px;border:1px solid #e5e7eb;border-radius:10px;font:inherit}
+    .contact button{margin-top:12px}
+    @media (max-width:900px){.contact{grid-template-columns:1fr}}
+
+    /* Footer */
+    footer{background:var(--brand-2);color:#e8f0f7;padding:36px 0 24px}
+    .foot{display:grid;grid-template-columns:2fr 1fr 1fr;gap:18px}
+    .foot h4{margin:0 0 10px}
+    .foot a{opacity:.9}
+    .copyright{opacity:.7;margin-top:18px;font-size:14px}
+    @media (max-width:900px){.foot{grid-template-columns:1fr}}
+
+    /* Utilities */
+    .btn{display:inline-flex;align-items:center;gap:8px;padding:12px 18px;border-radius:12px;border:2px solid var(--brand-2);font-weight:800}
+    .btn.primary{background:var(--brand-2);color:white;border-color:var(--brand-2)}
+    .btn.ghost{background:transparent;color:var(--brand-2)}
+    .chip{display:inline-block;padding:6px 10px;border-radius:999px;background:#fff;border:1px dashed #ddd;font-weight:700}
+  </style>
 </head>
 <body>
-  <header class="header">
-    <img src="Bright Bear Logo.png" alt="Bright Bear Logo" class="logo" />
-    <h1>Bright Bear Preschool</h1>
-    <p>Bright Future Starts with Bright Bear</p>
+  <!-- Header -->
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#home" aria-label="Bright Bear Preschool home">
+        <img src="assets/logo.png" alt="Bright Bear logo" />
+        <div>
+          <div class="title">Bright Bear Preschool</div>
+          <span class="subtitle">Learn • Play • Grow</span>
+        </div>
+      </a>
+      <nav>
+        <button class="menu-btn" aria-label="Open menu" onclick="toggleMenu()">☰</button>
+        <ul aria-label="Primary navigation">
+          <li><a href="#about">About</a></li>
+          <li><a href="#programs">Programmes</a></li>
+          <li><a href="#why">Why Us</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#contact" class="cta">Enquire Now</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="mobile" id="mobileMenu">
+      <a href="#about" onclick="toggleMenu(false)">About</a>
+      <a href="#programs" onclick="toggleMenu(false)">Programmes</a>
+      <a href="#why" onclick="toggleMenu(false)">Why Us</a>
+      <a href="#gallery" onclick="toggleMenu(false)">Gallery</a>
+      <a class="cta" href="#contact" onclick="toggleMenu(false)">Enquire Now</a>
+    </div>
   </header>
 
-  <main class="main-content">
-    <section>
-      <h2>About Us</h2>
-      <p>
-        Bright Bear Preschool offers a joyful and nurturing environment where children grow through
-        tech-enhanced learning and strong parent-school partnerships. Our balanced approach develops
-        academic, creative, and emotional readiness for primary school.
-      </p>
-    </section>
+  <!-- Hero -->
+  <section id="home" class="hero">
+    <div class="container wrap">
+      <div>
+        <span class="badge">Now enrolling — 2 to 6 years</span>
+        <h1>Warm hearts, curious minds, <span style="color:var(--accent)">ready for Primary 1</span>.</h1>
+        <p class="lead">We blend joyful play with strong literacy & numeracy, music (piano time!), and character building — designed to meet Malaysia MoE standards.</p>
+        <div class="hero-cta">
+          <a class="btn primary" href="#contact">Book a School Tour</a>
+          <a class="btn ghost" href="#programs">View Programmes</a>
+        </div>
+        <div style="margin-top:16px;display:flex;gap:10px;flex-wrap:wrap">
+          <span class="chip">Small class sizes</span>
+          <span class="chip">Parent app updates</span>
+          <span class="chip">Tech‑enhanced learning</span>
+        </div>
+      </div>
+      <div class="art">
+        <img class="card" src="https://images.unsplash.com/photo-1596464716121-d8dc7c7894bd?q=80&w=1600&auto=format&fit=crop" alt="Children learning joyfully" />
+        <div class="shape" aria-hidden="true"></div>
+      </div>
+    </div>
+  </section>
 
-    <section>
-      <h2>Programs</h2>
-      <ul>
-        <li>Nursery (2-3 years)</li>
-        <li>Pre-K (4 years)</li>
-        <li>Kindergarten (5-6 years)</li>
-        <li>Enrichment: Piano, Art, Social Skills</li>
-      </ul>
-    </section>
+  <!-- About -->
+  <section id="about">
+    <div class="container">
+      <h2 class="section-title">About Bright Bear</h2>
+      <p class="section-lead">A neighbourhood preschool with a loving team, modern classrooms, and a curriculum that grows with your child from playful discovery to Primary 1 readiness.</p>
+      <div class="grid-3">
+        <div class="program">
+          <span class="tag">Ages 2–3</span>
+          <h3>Early Years (Playgroup)</h3>
+          <p>Sensory play, music & movement, language exposure, and social skills in a cosy, safe environment.</p>
+        </div>
+        <div class="program">
+          <span class="tag">Ages 4–5</span>
+          <h3>Kindy Foundations</h3>
+          <p>Thematic discovery projects, phonics, pre‑writing, Mandarin basics, and gentle maths.</p>
+        </div>
+        <div class="program">
+          <span class="tag">Ages 6</span>
+          <h3>Primary Prep</h3>
+          <p>Stronger English, BM & Mandarin reading, problem‑solving maths, science starters, and study habits.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <section>
-      <h2>Our Curriculum</h2>
-      <ul>
-        <li>Tech-enhanced learning</li>
-        <li>MOE-aligned academic foundation</li>
-        <li>Creative arts, music & movement</li>
-      </ul>
-    </section>
+  <!-- Programmes -->
+  <section id="programs" style="background:#fff">
+    <div class="container">
+      <h2 class="section-title">Programmes & Highlights</h2>
+      <p class="section-lead">Balanced academics + joyful enrichment to build confidence.</p>
+      <div class="grid-3">
+        <div class="program">
+          <h3>Literacy & Numeracy</h3>
+          <p>Systematic phonics, sight words, storytelling; hands‑on maths with concrete materials.</p>
+        </div>
+        <div class="program">
+          <h3>Music & Piano Time</h3>
+          <p>Weekly piano lab and rhythm games to improve focus, memory, and fine motor skills.</p>
+        </div>
+        <div class="program">
+          <h3>Digital Corners</h3>
+          <p>Teacher‑guided tablets and coding toys (no ads) to explore patterns, logic, and creativity.</p>
+        </div>
+        <div class="program">
+          <h3>Character & Life Skills</h3>
+          <p>Kindness, independence, and teamwork through chores, role‑play, and class responsibilities.</p>
+        </div>
+        <div class="program">
+          <h3>Languages</h3>
+          <p>English, Bahasa Malaysia, and Mandarin tracks with daily practice and songs.</p>
+        </div>
+        <div class="program">
+          <h3>Safe & Caring</h3>
+          <p>CCTV at entrances, secure pickup, and regular parent updates via our app.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <section>
-      <h2>Gallery</h2>
-      <img src="uniform.png" alt="Uniform" class="gallery-image" />
-      <p class="caption">Bright Bear School Uniform Design</p>
-    </section>
+  <!-- Why Us -->
+  <section id="why">
+    <div class="container why">
+      <div>
+        <h2 class="section-title">Why Families Choose Us</h2>
+        <p class="section-lead">Similar clean structure you’re used to, but all fully branded to Bright Bear.</p>
+        <ul>
+          <li>Structured path to Primary 1 readiness (MoE‑aligned)</li>
+          <li>Teacher:child ratio that ensures attention</li>
+          <li>Daily parent updates (meals, naps, photos)</li>
+          <li>Qualified educators trained in phonics & early numeracy</li>
+          <li>Affordable fees — no franchise royalty overheads</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3 style="margin:0 0 8px">School Hours</h3>
+        <p style="margin:0 0 12px">Mon–Fri • 7:30am – 6:30pm</p>
+        <h3 style="margin:10px 0 8px">Locations</h3>
+        <p style="margin:0">Kuala Lumpur • Selangor</p>
+        <div style="height:12px"></div>
+        <a class="btn primary" href="#contact">Ask About Availability</a>
+      </div>
+    </div>
+  </section>
 
-    <section>
-      <h2>Contact Us</h2>
-      <p>📍  Kuala Lumpur</p>
-      <p>📞 +6142844361 | ✉️ brightbear2025@gmail.com</p>
-    </section>
-  </main>
+  <!-- Gallery -->
+  <section id="gallery" style="background:#fff">
+    <div class="container">
+      <h2 class="section-title">Peek Into Our Day</h2>
+      <div class="gallery" aria-label="School gallery">
+        <img src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?q=80&w=1200&auto=format&fit=crop" alt="Classroom"/>
+        <img src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?q=80&w=1200&auto=format&fit=crop" alt="Learning corner"/>
+        <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=1200&auto=format&fit=crop" alt="Art time"/>
+        <img src="https://images.unsplash.com/photo-1596495578065-8baf0b3e2f5f?q=80&w=1200&auto=format&fit=crop" alt="Playground"/>
+        <img src="https://images.unsplash.com/photo-1472162072942-cd5147eb3902?q=80&w=1200&auto=format&fit=crop" alt="Story time"/>
+        <img src="https://images.unsplash.com/photo-1600607687920-4ce8c559d8df?q=80&w=1200&auto=format&fit=crop" alt="Blocks"/>
+        <img src="https://images.unsplash.com/photo-1543364195-bfe6e4932397?q=80&w=1200&auto=format&fit=crop" alt="Piano"/>
+        <img src="https://images.unsplash.com/photo-1504714146340-959ca07b7bbf?q=80&w=1200&auto=format&fit=crop" alt="Teamwork"/>
+      </div>
+    </div>
+  </section>
 
-  <footer class="footer">
-    <p>&copy; 2025 Bright Bear Preschool</p>
+  <!-- Testimonials -->
+  <section id="reviews">
+    <div class="container">
+      <h2 class="section-title">Parents Say…</h2>
+      <div class="testis">
+        <div class="quote"><p>“My daughter loves piano time and her reading has improved a lot!”</p><div class="author">— A. Lim</div></div>
+        <div class="quote"><p>“Caring teachers and clear updates every day. We feel very assured.”</p><div class="author">— N. Wong</div></div>
+        <div class="quote"><p>“Great value with strong academics — ready for Primary 1.”</p><div class="author">— S. Tan</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" style="background:#fff">
+    <div class="container contact">
+      <div>
+        <h2 class="section-title">Book a Tour</h2>
+        <p class="section-lead">Tell us your child’s age and preferred campus — we’ll reply within 1 business day.</p>
+        <form name="contact" onsubmit="event.preventDefault(); alert('Thanks! We will get back to you shortly.'); this.reset();">
+          <label for="name">Parent Name</label>
+          <input id="name" name="name" required />
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" required />
+          <label for="phone">Phone</label>
+          <input id="phone" name="phone" type="tel" />
+          <label for="message">Child age & notes</label>
+          <textarea id="message" name="message" rows="5"></textarea>
+          <button class="btn primary" type="submit">Submit Enquiry</button>
+        </form>
+      </div>
+      <div>
+        <div class="card">
+          <h3 style="margin:0 0 10px">Contact Us</h3>
+          <p style="margin:0 0 8px">✉️ hello@brightbear.my</p>
+          <p style="margin:0 0 8px">📞 +60 12‑345 6789</p>
+          <p style="margin:0">📍 Kuala Lumpur • Selangor</p>
+          <div style="height:10px"></div>
+          <a class="btn ghost" href="#">Download Prospectus (PDF)</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container foot">
+      <div>
+        <h4>Bright Bear Preschool</h4>
+        <p>We nurture happy, confident learners through play and purposeful practice.</p>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <a href="#about">About</a><br/>
+        <a href="#programs">Programmes</a><br/>
+        <a href="#contact">Admissions</a>
+      </div>
+      <div>
+        <h4>Follow</h4>
+        <a href="#">Facebook</a><br/>
+        <a href="#">Instagram</a>
+      </div>
+    </div>
+    <div class="container copyright">© <span id="year"></span> Bright Bear Preschool. All rights reserved.</div>
   </footer>
+
+  <script>
+    function toggleMenu(force){
+      const m = document.getElementById('mobileMenu');
+      const open = typeof force === 'boolean' ? force : !m.classList.contains('open');
+      m.classList.toggle('open', open);
+    }
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
-
