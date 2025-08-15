@@ -28,7 +28,7 @@
     header{position:sticky;top:0;z-index:30;background:#fff;box-shadow:0 1px 10px rgba(0,0,0,.06)}
     .nav{display:flex;align-items:center;justify-content:space-between;padding:10px 0}
     .brand{display:flex;align-items:center;gap:12px}
-    .brand img{width:100px;height:100px;object-fit:contain}
+    .brand img{width:46px;height:46px;object-fit:contain}
     .brand .title{font-weight:800;letter-spacing:.3px;color:var(--brand-2)}
     .brand .subtitle{display:block;font-size:12px;font-weight:600;color:#6b7a8c;margin-top:-6px}
     nav ul{display:flex;gap:22px;list-style:none;margin:0;padding:0}
@@ -36,6 +36,10 @@
     .cta{background:var(--accent);color:white;padding:10px 16px;border-radius:999px;display:inline-flex;align-items:center;gap:10px;font-weight:700}
     .menu-btn{display:none;background:none;border:0;font-size:28px}
 
+    /* Always hide mobile menu on desktop */
+    @media (min-width: 901px) {
+      .mobile { display: none !important; }
+    }
 
     @media (max-width:900px){
       nav ul{display:none}
@@ -44,10 +48,6 @@
       .mobile a{display:block;padding:16px 24px;border-bottom:1px solid #f3f3f3}
       .mobile .cta{margin:12px 24px 24px}
       .mobile.open{display:block}
-    }
-
-}
-
     }
 
     /* Hero */
@@ -194,7 +194,7 @@
     </div>
   </section>
 
-  <!-- Programmes -->
+  <!-- Programs -->
   <section id="programs" style="background:#fff">
     <div class="container">
       <h2 class="section-title">Programmes & Highlights</h2>
