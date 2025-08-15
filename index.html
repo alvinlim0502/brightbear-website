@@ -153,7 +153,7 @@
         <h1>Warm hearts, curious minds, <span style="color:var(--accent)">ready for Primary 1</span></h1>
         <p class="lead">We blend joyful play with strong literacy & numeracy, music (piano time!), and character building — designed to meet Malaysia MoE standards.</p>
         <div class="hero-cta">
-          <a class="btn primary" href="#contact">Book a School Tour</a>
+          <a class="btn primary" href="tel:60123976428">Book a School Tour</a>
           <a class="btn ghost" href="#programs">View Programmes</a>
         </div>
         <div style="margin-top:16px;display:flex;gap:10px;flex-wrap:wrap">
@@ -288,16 +288,20 @@
       <div>
         <h2 class="section-title">Book a Tour</h2>
         <p class="section-lead">Tell us your child’s age and preferred campus — we’ll reply you the soonest.</p>
-        <form name="contact" onsubmit="event.preventDefault(); alert('Thanks! We will get back to you shortly.'); this.reset();">
+        <form id="waForm" onsubmit="submitToWhatsApp(event)">
           <label for="name">Parent Name</label>
           <input id="name" name="name" required />
+
           <label for="email">Email</label>
           <input id="email" name="email" type="email" required />
+
           <label for="phone">Phone</label>
           <input id="phone" name="phone" type="tel" />
+
           <label for="message">Child age & notes</label>
           <textarea id="message" name="message" rows="5"></textarea>
-          <button class="btn primary" type="submit">Submit Enquiry</button>
+
+          <button class="btn primary" type="submit">Submit via WhatsApp</button>
         </form>
       </div>
       <div>
@@ -342,6 +346,35 @@
       m.classList.toggle('open', open);
     }
     document.getElementById('year').textContent = new Date().getFullYear();
+    
+    // Set your WhatsApp number here (international format, no +, no spaces)
+  const BRIGHT_BEAR_WA = "60123976428";
+
+  function submitToWhatsApp(e) {
+    e.preventDefault();
+
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const phone = document.getElementById('phone').value.trim();
+    const notes = document.getElementById('message').value.trim();
+
+    const lines = [
+      "Hello Bright Bear,",
+      "",
+      "I would like to book a school tour.",
+      "",
+      `Parent Name: ${name}`,
+      `Email: ${email}`,
+      `Phone: ${phone}`,
+      `Child/Notes: ${notes}`,
+      "",
+      "Thanks!"
+    ];
+
+    const text = encodeURIComponent(lines.join("\n"));
+    const url = `https://wa.me/${BRIGHT_BEAR_WA}?text=${text}`;
+    window.open(url, "_blank");
+  }
   </script>
 </body>
 </html>
