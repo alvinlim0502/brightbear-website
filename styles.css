@@ -5,59 +5,69 @@ body {
   background-color: #fffbea;
   color: #333;
 }
-/* Header container */
-.header {
-  position: sticky;      /* stays at top like a proper site bar */
-  top: 0;
-  z-index: 1000;
-  display: flex;         /* put logo and nav on one line */
-  align-items: center;   /* vertically center items */
-  justify-content: space-between;
-  padding: 8px 24px;     /* slim vertical padding */
-  background-color: #fffbea; /* your brand background */
-  box-shadow: 0 1px 6px rgba(0,0,0,0.06); /* subtle depth */
+
+/* Kill stray margins that can make the bar look tall */
+.header * {
+  margin: 0;
 }
 
-/* Logo – keep your size but remove extra space */
+/* Header container */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;          /* vertical centering */
+  justify-content: space-between;
+  padding: 6px 20px;            /* slimmer than 8px 24px */
+  background-color: #fffbea;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.06);
+  line-height: 1;               /* no extra vertical expansion */
+}
+
+/* Logo size controls overall header depth */
 .logo {
-  height: 22px;          /* visually similar height to eduwis */
+  height: 28px;                 /* compact but readable */
   width: auto;
-  margin: 0;             /* kill extra bottom gap */
   display: block;
 }
 
-/* Navigation inline like eduwis */
+/* Navigation (inline) */
 .nav {
   display: flex;
-  gap: 24px;             /* spacing between links */
+  align-items: center;
+  gap: 20px;                    /* slightly tighter spacing */
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
+/* Navigation links – compact text */
 .nav a {
   text-decoration: none;
   color: #2b2b2b;
   font-weight: 600;
+  font-size: 14px;              /* smaller, like many edu sites */
   letter-spacing: 0.2px;
-  line-height: 1;        /* keeps links compact vertically */
-  padding: 8px 4px;      /* small click target without making bar tall */
+  line-height: 1;               /* compact line box */
+  padding: 6px 2px;             /* click area without making bar tall */
 }
 
-/* Optional “Enquire Now” button style */
+/* Optional “Enquire Now” button */
 .nav .btn {
-  padding: 8px 14px;
+  padding: 6px 12px;            /* slimmer button */
   border-radius: 6px;
   background: #ffcc4d;
   color: #2b2b2b;
   font-weight: 700;
 }
 
-/* Responsive tweak for mobile */
+/* Mobile tweaks */
 @media (max-width: 768px) {
-  .header { padding: 8px 16px; }
-  .nav { gap: 16px; }
-  .logo { height: 38px; }
+  .header { padding: 6px 14px; }
+  .logo { height: 26px; }       /* keep bar short on mobile too */
+  .nav { gap: 14px; flex-wrap: wrap; justify-content: flex-end; }
+  .nav a { font-size: 13px; padding: 6px 2px; }
 }
 .main-content {
   padding: 1.5rem;
@@ -83,6 +93,7 @@ section {
   background-color: #f8fafc;
   font-size: 0.8rem;
 }
+
 
 
 
