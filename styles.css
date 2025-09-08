@@ -29,7 +29,7 @@ header h1, header h2, header p { margin: 0; }
 
 /* Logo size controls overall header depth */
 .logo {
-  height: 28px;                 /* compact but readable */
+  height: 22px;                 /* compact but readable */
   width: auto;
   display: block;
 }
@@ -95,6 +95,7 @@ section {
   background-color: #f8fafc;
   font-size: 0.8rem;
 }
+
 
 
 
