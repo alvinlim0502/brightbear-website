@@ -20,7 +20,7 @@ body {
 
 /* Logo – keep your size but remove extra space */
 .logo {
-  height: 44px;          /* visually similar height to eduwis */
+  height: 22px;          /* visually similar height to eduwis */
   width: auto;
   margin: 0;             /* kill extra bottom gap */
   display: block;
@@ -83,6 +83,7 @@ section {
   background-color: #f8fafc;
   font-size: 0.8rem;
 }
+
 
 
 
