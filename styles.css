@@ -32,7 +32,8 @@ header {
 }
 
 /* ✅ Logo height controls header depth */
-.brand img,
+.brand img { height:44px; width:auto; }
+
 .logo {
   height: 44px;            /* match eduwis logo size */
   width: auto;
@@ -93,3 +94,4 @@ nav a {
   .mobile { inset: 56px 0 auto 0; } /* header height = 44px logo + 6px padding */
   .brand img { height: 38px; }      /* slightly smaller on mobile */
 }
+
