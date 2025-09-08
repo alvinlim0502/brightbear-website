@@ -5,14 +5,59 @@ body {
   background-color: #fffbea;
   color: #333;
 }
+/* Header container */
 .header {
-  text-align: center;
-  padding: 0.2rem 1rem;
-  background-color: #fffbea;
+  position: sticky;      /* stays at top like a proper site bar */
+  top: 0;
+  z-index: 1000;
+  display: flex;         /* put logo and nav on one line */
+  align-items: center;   /* vertically center items */
+  justify-content: space-between;
+  padding: 8px 24px;     /* slim vertical padding */
+  background-color: #fffbea; /* your brand background */
+  box-shadow: 0 1px 6px rgba(0,0,0,0.06); /* subtle depth */
 }
+
+/* Logo – keep your size but remove extra space */
 .logo {
-  width: 70px;
-  margin-bottom: 0.2rem;
+  height: 44px;          /* visually similar height to eduwis */
+  width: auto;
+  margin: 0;             /* kill extra bottom gap */
+  display: block;
+}
+
+/* Navigation inline like eduwis */
+.nav {
+  display: flex;
+  gap: 24px;             /* spacing between links */
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav a {
+  text-decoration: none;
+  color: #2b2b2b;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+  line-height: 1;        /* keeps links compact vertically */
+  padding: 8px 4px;      /* small click target without making bar tall */
+}
+
+/* Optional “Enquire Now” button style */
+.nav .btn {
+  padding: 8px 14px;
+  border-radius: 6px;
+  background: #ffcc4d;
+  color: #2b2b2b;
+  font-weight: 700;
+}
+
+/* Responsive tweak for mobile */
+@media (max-width: 768px) {
+  .header { padding: 8px 16px; }
+  .nav { gap: 16px; }
+  .logo { height: 38px; }
 }
 .main-content {
   padding: 1.5rem;
@@ -38,6 +83,7 @@ section {
   background-color: #f8fafc;
   font-size: 0.8rem;
 }
+
 
 
 
