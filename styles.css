@@ -27,6 +27,8 @@ header h1, header h2, header p { margin: 0; }
   line-height: 1;               /* no extra vertical expansion */
 }
 
+.brand img { width:auto; height:auto; }
+
 /* Logo size controls overall header depth */
 .logo {
   height: 22px;                 /* compact but readable */
@@ -95,6 +97,7 @@ section {
   background-color: #f8fafc;
   font-size: 0.8rem;
 }
+
 
 
 
