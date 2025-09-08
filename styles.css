@@ -6,6 +6,8 @@ body {
   color: #333;
 }
 
+header h1, header h2, header p { margin: 0; }
+
 /* Kill stray margins that can make the bar look tall */
 .header * {
   margin: 0;
@@ -93,6 +95,7 @@ section {
   background-color: #f8fafc;
   font-size: 0.8rem;
 }
+
 
 
 
