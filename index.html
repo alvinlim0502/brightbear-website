@@ -101,7 +101,14 @@
     }
 
     /* Hero */
-    .hero{position:relative;isolation:isolate}
+    .hero {
+      position: relative;
+      isolation: isolate;
+      background: url("assets/logo_transparent.png") no-repeat right bottom / 300px auto,
+              linear-gradient(#fffbea, #fffaf2); /* optional gradient background */
+      min-height: 600px;     /* keeps it tall enough for bear + text */
+      padding: 60px 0;       /* space for text */
+    }
     .hero .wrap{display:grid;grid-template-columns:1.2fr .8fr;gap:36px;align-items:center;padding:48px 0}
     .badge{display:inline-block;background:var(--mint);color:#03423a;font-weight:800;padding:8px 12px;border-radius:999px;font-size:13px;margin-bottom:16px}
     h1{font-size:clamp(28px,5vw,56px);line-height:1.05;margin:0 0 12px;color:var(--brand-2)}
