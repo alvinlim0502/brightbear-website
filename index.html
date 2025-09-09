@@ -109,6 +109,14 @@
       min-height: 600px;     /* keeps it tall enough for bear + text */
       padding: 60px 0;       /* space for text */
     }
+    
+    /* Overlay for readability if you add a photo background later */
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+    }
     .hero .wrap{display:grid;grid-template-columns:1.2fr .8fr;gap:36px;align-items:center;padding:48px 0}
     .badge{display:inline-block;background:var(--mint);color:#03423a;font-weight:800;padding:8px 12px;border-radius:999px;font-size:13px;margin-bottom:16px}
     h1{font-size:clamp(28px,5vw,56px);line-height:1.05;margin:0 0 12px;color:var(--brand-2)}
@@ -117,6 +125,16 @@
     .card{background:#fff;border-radius:20px;box-shadow:0 10px 30px rgba(2,48,71,.08);padding:22px}
     .hero .art{position:relative}
     .shape{position:absolute;inset:auto auto -40px -40px;width:160px;height:160px;background:var(--brand);filter:blur(60px);opacity:.4;z-index:-1;border-radius:50%}
+
+    /* ✅ Mobile tweak */
+    @media (max-width: 768px) {
+      .hero {
+          background: url("assets/logo_transparent.png") no-repeat center bottom / 150px auto,
+                linear-gradient(#fffbea, #fffaf2);
+      min-height: 500px;  /* a bit shorter for phones */
+      padding: 40px 0 120px; /* add bottom padding so text doesn't cover bear */
+      }
+    }
 
     /* Sections */
     section{padding:64px 0}
