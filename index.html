@@ -126,15 +126,16 @@
       height: auto;
       object-fit: contain;
       display: block;
-      max-width: 420px;   /* keeps mascot from getting too big on wide screens */
+      max-width: 100%;   /* keeps mascot from getting too big on wide screens */
       margin: 0 auto;     /* centers image if smaller */
     }
 
     /* ✅ Mobile adjustment */
       @media (max-width: 768px) {
       .art img {
-      max-width: 250px;   /* shrink mascot for mobile */
-      margin-top: 20px;   /* add some breathing room below text */
+        max-width: 100%;   /* shrink mascot for mobile */
+        margin-top: 100%;   /* add some breathing room below text */
+        height: auto;
       }
     }
     .shape{position:absolute;inset:auto auto -40px -40px;width:160px;height:160px;background:var(--brand);filter:blur(60px);opacity:.4;z-index:-1;border-radius:50%}
