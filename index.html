@@ -120,6 +120,23 @@
     .hero-cta{display:flex;gap:12px;flex-wrap:wrap}
     .card{background:#fff;border-radius:20px;box-shadow:0 10px 30px rgba(2,48,71,.08);padding:22px}
     .hero .art{position:relative}
+    /* Default (desktop/tablet) */
+    .art img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      display: block;
+      max-width: 420px;   /* keeps mascot from getting too big on wide screens */
+      margin: 0 auto;     /* centers image if smaller */
+    }
+
+    /* ✅ Mobile adjustment */
+      @media (max-width: 768px) {
+      .art img {
+      max-width: 250px;   /* shrink mascot for mobile */
+      margin-top: 20px;   /* add some breathing room below text */
+      }
+    }
     .shape{position:absolute;inset:auto auto -40px -40px;width:160px;height:160px;background:var(--brand);filter:blur(60px);opacity:.4;z-index:-1;border-radius:50%}
 
     /* Sections */
@@ -369,7 +386,7 @@
       <div>
         <div class="card">
           <h3 style="margin:0 0 10px">Contact Us</h3>
-          <p style="margin:0 0 8px">✉️ brightbear@gmail.com.my</p>
+          <p style="margin:0 0 8px">✉️ brightbear@gmail.com</p>
           <p style="margin:0 0 8px">📞 +60 17‑600 2267</p>
           <p style="margin:0">📍 39-1， Block A, KL Traders Square, Jalan Gombak, Setapak, Kuala Lumpur</p>
           <div style="height:10px"></div>
@@ -411,7 +428,7 @@
     document.getElementById('year').textContent = new Date().getFullYear();
     
     // Set your WhatsApp number here (international format, no +, no spaces)
-  const BRIGHT_BEAR_WA = "60123976428";
+  const BRIGHT_BEAR_WA = "60176002267";
 
   function submitToWhatsApp(e) {
     e.preventDefault();
