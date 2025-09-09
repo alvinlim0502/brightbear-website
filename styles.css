@@ -87,18 +87,6 @@ nav a {
   gap: 8px;
 }
 
-.art {
-  width: 100%;         /* takes full width of its grid column */
-  height: auto;
-}
-
-.art img {
-  width: 100%;         /* fills container width */
-  height: auto;        /* keeps aspect ratio */
-  object-fit: contain; /* no cropping, just scales */
-  display: block;
-}
-
 /* Mobile menu tweaks */
 @media (max-width: 1024px) {    /* switch earlier to avoid wrap */
   nav ul { display: none; }
@@ -106,5 +94,6 @@ nav a {
   .mobile { inset: 56px 0 auto 0; } /* header height = 44px logo + 6px padding */
   .brand img { height: 38px; }      /* slightly smaller on mobile */
 }
+
 
 
