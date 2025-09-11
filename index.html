@@ -122,10 +122,14 @@
     .hero .art{position:relative}
 
     .art {
-      display: inline-block;   /* box wraps its contents */
+      display: contents;   /* ✅ removes the box but keeps child elements */
       width: auto;
       height: auto;
+      margin: 0;
+      padding: 0;
+      border: 0;
     }
+
     .art img {
       width: auto;          /* use natural width */
       height: auto;         /* use natural height */
@@ -252,6 +256,7 @@
       </div>
       <div class="art">
         <img class="card" src="assets/brightbear-hero.png" alt="Bright Bear Preschool mascot" />
+        <div class="shape" aria-hidden="true"></div>
       </div>
     </div>
   </section>
