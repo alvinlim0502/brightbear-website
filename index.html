@@ -130,36 +130,46 @@
     .hero .art{position:relative}
 
     .art {
-      display: contents;   /* ✅ removes the box but keeps child elements */
-      width: auto;
-      height: auto;
-      margin: 0;
-      padding: 0;
-      border: 0;
+      position: relative;
+      background-image: url('assets/Intake.jpg');
+      background-size: cover;          /* fills the section nicely */
+      background-position: center;     /* centers the image */
+      background-repeat: no-repeat;    /* no tiling */
+      width: 100%;
+      height: 320px;                   /* adjust height as you like */
+      border-radius: 20px;
+      overflow: hidden;
     }
 
-    .art img {
-      width: auto;          /* use natural width */
-      height: auto;         /* use natural height */
-      object-fit: contain;    /* ensures full image is visible */
-      display: block;       /* removes inline whitespace */
-      border: 0;
-      border-radius: 12px;  /* optional: keeps rounded corners */
+/* Optional: keep the soft yellow blur “shape” on top */
+    .art .shape {
+      position: absolute;
+      inset: auto auto -40px -40px;
+      width: 160px;
+      height: 160px;
+      background: var(--brand);
+      filter: blur(60px);
+      opacity: 0.4;
+      z-index: 1;
+      border-radius: 50%;
     }
 
-    /* ✅ Mobile adjustment */
-      @media (max-width: 768px) {
-        .art {
-          height: auto;       /* let the height shrink naturally */
-        }
-        .art img {
-        width: 100%;        /* fill screen width */
-        height: auto;       /* keep proportions */
-        object-fit: contain; /* show the full image on small screens */
-        border-radius: 0;    /* optional: remove rounding for edge-to-edge */
-        }
-      }
-    .shape{position:absolute;inset:auto auto -40px -40px;width:160px;height:160px;background:var(--brand);filter:blur(60px);opacity:.4;z-index:-1;border-radius:50%}
+/* Optional: make sure the image section resizes gracefully on mobile */
+    @media (max-width: 768px) {
+    .art {
+      height: 220px;   /* smaller height for phone view */
+      border-radius: 0;
+     }
+    }
+    
+    .art::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.15); /* light dark overlay */
+      z-index: 0;
+    }
+
 
     /* Sections */
     section{padding:64px 0}
@@ -263,7 +273,6 @@
         </div>
       </div>
       <div class="art">
-        <img src="assets/Intake.jpg" alt="Intake" />
         <div class="shape" aria-hidden="true"></div>
       </div>
     </div>
