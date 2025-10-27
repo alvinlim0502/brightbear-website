@@ -112,82 +112,39 @@
 /* ===== HERO SECTION WITH WARM, BRIGHT BACKGROUND ===== */
 .hero {
   position: relative;
-  isolation: isolate;
-  background-image: url('assets/Intake.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  color: white;
-  min-height: 90vh;
+  background: url('assets/Intake.jpg') center/cover no-repeat;
+  color: #1a1a1a; /* dark text for contrast */
+  text-align: center;
+  padding: 100px 20px;
+  min-height: 100vh;
   display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  overflow: hidden;
-  padding: 0 5%;
-  filter: brightness(1.15) saturate(1.1);
+  flex-direction: column;
+  justify-content: center;
 }
 
-/* Soft warm overlay */
+/* Remove the faded white overlay */
 .hero::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    rgba(255, 230, 200, 0.25),
-    rgba(255, 240, 220, 0.25)
-  );
-  z-index: 0;
-}
-
-/* Ensure hero text stays above overlay */
-.hero-content {
-  position: relative;
+  background: rgba(255, 255, 255, 0.1); /* slight brightness only */
   z-index: 1;
-  max-width: 600px;
 }
 
-/* Hero heading styles */
-.hero-content h1 {
-  font-size: 3rem;
-  line-height: 1.2;
-  margin-bottom: 1rem;
+/* Ensure hero text stays above background */
+.hero * {
+  position: relative;
+  z-index: 2;
 }
 
-/* Hero paragraph */
-.hero-content p {
-  font-size: 1.25rem;
-  line-height: 1.6;
-  max-width: 90%;
-}
-
-/* Optional: subtle text shadow for better contrast */
-.hero-content h1,
-.hero-content p {
-  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-}
-
-/* ===== MOBILE RESPONSIVE ADJUSTMENTS ===== */
+/* MOBILE VIEW */
 @media (max-width: 768px) {
   .hero {
-    background-position: center top;
-    min-height: 70vh;
-    padding: 60px 20px;
-    filter: brightness(1.1) saturate(1.1);
-  }
-
-  .hero-content {
-    text-align: center;
-    max-width: 100%;
-  }
-
-  .hero-content h1 {
-    font-size: 2rem;
-  }
-
-  .hero-content p {
-    font-size: 1rem;
+    background: url('assets/Intake.jpg') center/cover no-repeat;
+    padding: 80px 15px;
   }
 }
+
 
 
     /* Sections */
