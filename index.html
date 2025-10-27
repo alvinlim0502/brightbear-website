@@ -109,12 +109,10 @@
     }
 
     /* Hero */
-/* ===== HERO SECTION WITH WARM, BRIGHT BACKGROUND ===== */
-/* HERO SECTION */
 .hero {
   position: relative;
-  background: url('assets/color-bg.jpg') center/cover no-repeat;
-  color: white; /* text stands out on colorful image */
+  background: url('assets/Intake.jpg') center/cover no-repeat;
+  color: #1a1a1a; /* dark text for contrast */
   text-align: center;
   padding: 100px 20px;
   min-height: 100vh;
@@ -123,14 +121,29 @@
   justify-content: center;
 }
 
-/* MOBILE */
+/* Remove the faded white overlay */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.1); /* slight brightness only */
+  z-index: 1;
+}
+
+/* Ensure hero text stays above background */
+.hero * {
+  position: relative;
+  z-index: 2;
+}
+
+/* MOBILE VIEW */
 @media (max-width: 768px) {
   .hero {
-    background: url('assets/color-bg.jpg') center/cover no-repeat;
-    color: white;
+    background: url('assets/Intake.jpg') center/cover no-repeat;
     padding: 80px 15px;
   }
 }
+
 
 
     /* Sections */
