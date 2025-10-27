@@ -127,32 +127,27 @@
     .lead{font-size:clamp(16px,2.3vw,20px);opacity:.9;margin:0 0 24px}
     .hero-cta{display:flex;gap:12px;flex-wrap:wrap}
     .card{background:#fff;border-radius:20px;box-shadow:0 10px 30px rgba(2,48,71,.08);padding:22px}
-    .hero .art{position:relative}
-
-    .art {
+    .hero .art {
       position: relative;
       background-image: url('assets/Intake.jpg');
-      background-size: cover;          /* fills the section nicely */
-      background-position: center;     /* centers the image */
-      background-repeat: no-repeat;    /* no tiling */
-      width: 100%;
-      height: 320px;                   /* adjust height as you like */
-      border-radius: 20px;
-      overflow: hidden;
+      background-size: cover;       /* Makes it fill the box nicely */
+      background-position: center;  /* Centers the photo */
+      background-repeat: no-repeat; /* Prevents tiling */
+      width: 100%;                  /* Full width of section */
+      height: 300px;                /* Adjust this to make it smaller/larger */
+      border-radius: 12px;          /* Optional – for soft corners */
+      overflow: hidden;             /* Keeps shapes inside */
     }
-
-/* Optional: keep the soft yellow blur “shape” on top */
-    .art .shape {
+    .hero .art .shape {
       position: absolute;
-      inset: auto auto -40px -40px;
-      width: 160px;
-      height: 160px;
-      background: var(--brand);
-      filter: blur(60px);
-      opacity: 0.4;
-      z-index: 1;
+      bottom: 0;
+      right: 0;
+      width: 80px;
+      height: 80px;
+      background: rgba(255, 255, 255, 0.3);
       border-radius: 50%;
     }
+
 
 /* Optional: make sure the image section resizes gracefully on mobile */
     @media (max-width: 768px) {
