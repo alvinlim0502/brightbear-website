@@ -124,14 +124,18 @@
   align-items: center;
   justify-content: flex-start;
   overflow: hidden;
-  filter: brightness(1.15); /* make image slightly brighter */
+  filter: brightness(1.15) saturate(1.1); /* slightly brighter & richer color */
 }
+
 
 .hero::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(255, 255, 255, 0.1); /* light overlay for brightness */
+  background: linear-gradient(
+    rgba(255, 230, 200, 0.25),
+    rgba(255, 240, 220, 0.25)
+  ); /* warm, sunny tint overlay */
   z-index: 0;
 }
 
