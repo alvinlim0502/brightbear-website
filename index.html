@@ -165,6 +165,36 @@
   text-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
 }
 
+/* ===== BRAND-MATCHED HERO BUTTON ===== */
+.hero-content .btn {
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding: 0.8em 1.8em;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #fff;
+  background: linear-gradient(135deg, #F29B38, #F8C23A); /* Bright Bear colors */
+  border: none;
+  border-radius: 50px;
+  box-shadow: 0 4px 10px rgba(242, 155, 56, 0.4);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.hero-content .btn:hover {
+  background: linear-gradient(135deg, #F8C23A, #F29B38);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(242, 155, 56, 0.5);
+}
+
+.hero-content .btn:active {
+  transform: translateY(0);
+  box-shadow: 0 3px 6px rgba(242, 155, 56, 0.4);
+}
+
+
+    
 /* ===== MOBILE RESPONSIVE ADJUSTMENTS ===== */
 @media (max-width: 768px) {
   .hero {
@@ -186,6 +216,13 @@
   .hero-content p {
     font-size: 1rem;
   }
+  /* MOBILE ADJUSTMENT */
+@media (max-width: 768px) {
+  .hero-content .btn {
+    font-size: 1rem;
+    padding: 0.7em 1.5em;
+  }
+}
 }
 
 
