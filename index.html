@@ -109,49 +109,164 @@
     }
 
     /* Hero */
-    .hero {
-      position: relative;
-      isolation: isolate;
-      background-image: url('assets/Intake.jpg'); /* Make Intake.jpg fill hero background */
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      color: white; /* optional: makes text readable */
-    }
+/* ===== HERO SECTION ===== */
 
-    .hero::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: rgba(0,0,0,0.4); /* darker overlay for readability */
-      z-index: 0;
-    }
+.hero {
+  position: relative;
+  isolation: isolate;
+  background-image: url('assets/Intake.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+  min-height: 100vh; /* full screen height */
+  display: flex;
+  align-items: center;
+}
 
-    .hero .wrap {
-      position: relative;
-      z-index: 1; /* ensures text sits above overlay */
-      display: grid;
-      grid-template-columns: 1fr;
-      text-align: left;
-      padding: 100px 0; /* increase vertical space */
-    }
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    rgba(0, 0, 0, 0.5),
+    rgba(0, 0, 0, 0.5)
+  ); /* soft overlay for readability */
+  z-index: 0;
+}
 
+.hero .wrap {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  text-align: left;
+  padding: 0 2rem;
+}
 
-/* Optional: make sure the image section resizes gracefully on mobile */
-    @media (max-width: 768px) {
-    .art {
-      height: 220px;   /* smaller height for phone view */
-      border-radius: 0;
-     }
-    }
-    
-    .art::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: rgba(0,0,0,0.15); /* light dark overlay */
-      z-index: 0;
-    }
+.hero .content {
+  max-width: 700px;
+}
+
+.hero .badge {
+  background: var(--accent, #ffc107);
+  color: #222;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 20px;
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.hero h1 .highlight {
+  color: var(--accent, #ffcc33);
+}
+
+.hero .lead {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.hero-cta .btn {
+  display: inline-block;
+  padding: 12px 24px;
+  font-weight: 600;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.3s ease;
+  margin-right: 12px;
+}
+
+.hero-cta .btn.primary {
+  background: var(--accent, #ffcc33);
+  color: #222;
+}
+
+.hero-cta .btn.primary:hover {
+  background: #ffda5c;
+}
+
+.hero-cta .btn.secondary {
+  border: 2px solid white;
+  color: white;
+}
+
+.hero-cta .btn.secondary:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* ===== MOBILE RESPONSIVE ADJUSTMENTS ===== */
+
+@media (max-width: 1024px) {
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+  .hero .lead {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    min-height: 80vh;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .hero .wrap {
+    padding: 0 1.5rem;
+  }
+
+  .hero .content {
+    max-width: 90%;
+    margin: 0 auto;
+  }
+
+  .hero .badge {
+    margin-bottom: 16px;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+    line-height: 1.3;
+  }
+
+  .hero .lead {
+    font-size: 1rem;
+  }
+
+  .hero-cta .btn {
+    display: block;
+    margin: 10px auto;
+    width: fit-content;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    min-height: 70vh;
+  }
+
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero .lead {
+    font-size: 0.95rem;
+  }
+
+  .hero-cta .btn {
+    padding: 10px 20px;
+    font-size: 0.95rem;
+  }
+}
 
 
     /* Sections */
@@ -239,28 +354,25 @@
   </header>
 
   <!-- Hero -->
-  <section id="home" class="hero">
-    <div class="container wrap">
-      <div>
-        <span class="badge">Now enrolling — 3 to 6 years</span>
-        <h1>Warm hearts, curious minds, <span style="color:var(--accent)">ready for Primary 1</span></h1>
-        <p class="lead">We blend joyful play with strong literacy & numeracy, music (piano time!), and character building — designed to meet Malaysia MoE standards.</p>
-        <div class="hero-cta">
-          <a class="btn primary" href="#contact">Book a School Tour</a>
-          <a class="btn primary" href="#programs">View Programmes</a>
-        </div>
-        <div style="margin-top:16px;display:flex;gap:10px;flex-wrap:wrap">
-          <span class="chip">Small class sizes</span>
-          <span class="chip">Parent app updates</span>
-          <span class="chip">Tech‑enhanced learning</span>
-        </div>
+<section id="home" class="hero">
+  <div class="container wrap">
+    <div class="content">
+      <span class="badge">Now enrolling — 3 to 6 years</span>
+      <h1>
+        Warm hearts, curious minds, 
+        <span class="highlight">ready for Primary 1</span>
+      </h1>
+      <p class="lead">
+        We blend joyful play with strong literacy & numeracy, music (piano time!), 
+        and character building — designed to meet Malaysia MoE standards.
+      </p>
+      <div class="hero-cta">
+        <a class="btn primary" href="#contact">Book a School Tour</a>
+        <a class="btn secondary" href="#programs">View Programmes</a>
       </div>
-
-
-
-      
     </div>
-  </section>
+  </div>
+</section>
 
   <!-- About -->
   <section id="about">
