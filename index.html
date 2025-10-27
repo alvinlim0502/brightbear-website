@@ -118,22 +118,23 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-attachment: fixed; /* Parallax effect */
   color: white;
-  min-height: 90vh; /* Full viewport height */
+  min-height: 90vh; /* full height */
   display: flex;
   align-items: center;
   justify-content: flex-start;
   overflow: hidden;
+  filter: brightness(1.15); /* make image slightly brighter */
 }
 
 .hero::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(255, 255, 255, 0.15); /* Light overlay = brighter image */
+  background: rgba(255, 255, 255, 0.1); /* light overlay for brightness */
   z-index: 0;
 }
+
 
 }
 
