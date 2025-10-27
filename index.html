@@ -110,119 +110,38 @@
 
     /* Hero */
 /* ===== HERO SECTION WITH WARM, BRIGHT BACKGROUND ===== */
+/* HERO SECTION */
 .hero {
   position: relative;
-  isolation: isolate;
-  background-image: url('assets/Intake.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  color: white;
-  min-height: 90vh;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  overflow: hidden;
-  padding: 0 5%;
-}
-
-/* Soft warm overlay */
-.hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
   background: linear-gradient(
-    rgba(255, 230, 200, 0.25),
-    rgba(255, 240, 220, 0.25)
-  );
-  z-index: 0;
+      rgba(255, 255, 255, 0.8),
+      rgba(255, 255, 255, 0.8)
+    ),
+    url('assets/Intake.jpg') center/cover no-repeat;
+  color: #1a1a1a; /* dark text for contrast */
+  text-align: center;
+  padding: 100px 20px;
 }
 
-/* Ensure hero text stays above overlay */
-.hero-content {
-  position: relative;
-  z-index: 1;
-  max-width: 600px;
+/* Optional: make sure the section fills the screen height if needed */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-/* Hero heading styles */
-.hero-content h1 {
-  font-size: 3rem;
-  line-height: 1.2;
-  margin-bottom: 1rem;
-}
-
-/* Hero paragraph */
-.hero-content p {
-  font-size: 1.25rem;
-  line-height: 1.6;
-  max-width: 90%;
-}
-
-/* Optional: subtle text shadow for better contrast */
-.hero-content h1,
-.hero-content p {
-  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-}
-
-/* ===== BRAND-MATCHED HERO BUTTON ===== */
-.hero-content .btn {
-  display: inline-block;
-  margin-top: 1.5rem;
-  padding: 0.8em 1.8em;
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: #fff;
-  background: linear-gradient(135deg, #F29B38, #F8C23A); /* Bright Bear colors */
-  border: none;
-  border-radius: 50px;
-  box-shadow: 0 4px 10px rgba(242, 155, 56, 0.4);
-  transition: all 0.3s ease;
-  cursor: pointer;
-  text-decoration: none;
-}
-
-.hero-content .btn:hover {
-  background: linear-gradient(135deg, #F8C23A, #F29B38);
-  transform: translateY(-3px);
-  box-shadow: 0 6px 12px rgba(242, 155, 56, 0.5);
-}
-
-.hero-content .btn:active {
-  transform: translateY(0);
-  box-shadow: 0 3px 6px rgba(242, 155, 56, 0.4);
-}
-
-
-    
-/* ===== MOBILE RESPONSIVE ADJUSTMENTS ===== */
+/* MOBILE VERSION */
 @media (max-width: 768px) {
   .hero {
-    background-position: center top;
-    min-height: 70vh;
-    padding: 60px 20px;
-    filter: brightness(1.1) saturate(1.1);
+    background: linear-gradient(
+        rgba(255, 255, 255, 0.9),
+        rgba(255, 255, 255, 0.9)
+      ),
+      url('assets/Intake.jpg') center/cover no-repeat;
+    color: #111; /* slightly darker text for small screens */
+    padding: 80px 15px;
   }
-
-  .hero-content {
-    text-align: center;
-    max-width: 100%;
-  }
-
-  .hero-content h1 {
-    font-size: 2rem;
-  }
-
-  .hero-content p {
-    font-size: 1rem;
-  }
-  /* MOBILE ADJUSTMENT */
-@media (max-width: 768px) {
-  .hero-content .btn {
-    font-size: 1rem;
-    padding: 0.7em 1.5em;
-  }
-}
 }
 
 
