@@ -113,33 +113,21 @@
 /* HERO SECTION */
 .hero {
   position: relative;
-  background: linear-gradient(
-      rgba(255, 255, 255, 0.8),
-      rgba(255, 255, 255, 0.8)
-    ),
-    url('assets/Intake.jpg') center/cover no-repeat;
-  color: #1a1a1a; /* dark text for contrast */
+  background: url('assets/color-bg.jpg') center/cover no-repeat;
+  color: white; /* text stands out on colorful image */
   text-align: center;
   padding: 100px 20px;
-}
-
-/* Optional: make sure the section fills the screen height if needed */
-.hero {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
-/* MOBILE VERSION */
+/* MOBILE */
 @media (max-width: 768px) {
   .hero {
-    background: linear-gradient(
-        rgba(255, 255, 255, 0.9),
-        rgba(255, 255, 255, 0.9)
-      ),
-      url('assets/Intake.jpg') center/cover no-repeat;
-    color: #111; /* slightly darker text for small screens */
+    background: url('assets/color-bg.jpg') center/cover no-repeat;
+    color: white;
     padding: 80px 15px;
   }
 }
