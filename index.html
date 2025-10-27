@@ -109,7 +109,7 @@
     }
 
     /* Hero */
-/* ===== HERO SECTION ===== */
+/* ===== HERO SECTION WITH PARALLAX EFFECT ===== */
 
 .hero {
   position: relative;
@@ -118,10 +118,13 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  background-attachment: fixed; /* ✅ Parallax effect */
   color: white;
-  min-height: 100vh; /* full screen height */
+  min-height: 100vh;
   display: flex;
   align-items: center;
+  justify-content: flex-start;
+  overflow: hidden;
 }
 
 .hero::before {
@@ -131,7 +134,7 @@
   background: linear-gradient(
     rgba(0, 0, 0, 0.5),
     rgba(0, 0, 0, 0.5)
-  ); /* soft overlay for readability */
+  );
   z-index: 0;
 }
 
@@ -202,7 +205,7 @@
   background: rgba(255, 255, 255, 0.2);
 }
 
-/* ===== MOBILE RESPONSIVE ADJUSTMENTS ===== */
+/* ===== RESPONSIVE DESIGN ===== */
 
 @media (max-width: 1024px) {
   .hero h1 {
@@ -213,11 +216,13 @@
   }
 }
 
+/* On smaller screens, disable parallax to prevent jittering */
 @media (max-width: 768px) {
   .hero {
     min-height: 80vh;
     text-align: center;
     justify-content: center;
+    background-attachment: scroll; /* ✅ Disable parallax on mobile */
   }
 
   .hero .wrap {
@@ -227,10 +232,6 @@
   .hero .content {
     max-width: 90%;
     margin: 0 auto;
-  }
-
-  .hero .badge {
-    margin-bottom: 16px;
   }
 
   .hero h1 {
@@ -267,6 +268,7 @@
     font-size: 0.95rem;
   }
 }
+
 
 
     /* Sections */
