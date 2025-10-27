@@ -112,40 +112,28 @@
     .hero {
       position: relative;
       isolation: isolate;
+      background-image: url('assets/Intake.jpg'); /* Make Intake.jpg fill hero background */
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      color: white; /* optional: makes text readable */
     }
-    
-    /* Overlay for readability if you add a photo background later */
+
     .hero::before {
       content: "";
       position: absolute;
       inset: 0;
-      z-index: -1;
+      background: rgba(0,0,0,0.4); /* darker overlay for readability */
+      z-index: 0;
     }
-    .hero .wrap{display:grid;grid-template-columns:1.2fr .8fr;gap:36px;align-items:center;padding:48px 0}
-    .badge{display:inline-block;background:var(--mint);color:#03423a;font-weight:800;padding:8px 12px;border-radius:999px;font-size:13px;margin-bottom:16px}
-    h1{font-size:clamp(28px,5vw,56px);line-height:1.05;margin:0 0 12px;color:var(--brand-2)}
-    .lead{font-size:clamp(16px,2.3vw,20px);opacity:.9;margin:0 0 24px}
-    .hero-cta{display:flex;gap:12px;flex-wrap:wrap}
-    .card{background:#fff;border-radius:20px;box-shadow:0 10px 30px rgba(2,48,71,.08);padding:22px}
-    .hero .art {
+
+    .hero .wrap {
       position: relative;
-      background-image: url('assets/Intake.jpg');
-      background-size: cover;       /* Makes it fill the box nicely */
-      background-position: center;  /* Centers the photo */
-      background-repeat: no-repeat; /* Prevents tiling */
-      width: 100%;                  /* Full width of section */
-      height: 300px;                /* Adjust this to make it smaller/larger */
-      border-radius: 12px;          /* Optional – for soft corners */
-      overflow: hidden;             /* Keeps shapes inside */
-    }
-    .hero .art .shape {
-      position: absolute;
-      bottom: 0;
-      right: 0;
-      width: 80px;
-      height: 80px;
-      background: rgba(255, 255, 255, 0.3);
-      border-radius: 50%;
+      z-index: 1; /* ensures text sits above overlay */
+      display: grid;
+      grid-template-columns: 1fr;
+      text-align: left;
+      padding: 100px 0; /* increase vertical space */
     }
 
 
