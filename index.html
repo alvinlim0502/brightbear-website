@@ -134,7 +134,10 @@
   content: "";
   position: absolute;
   inset: 0;
-
+  background: linear-gradient(
+    rgba(50, 50, 50, 0.2),
+    rgba(50, 50, 50, 0.2)
+  ); /* soft overlay for readability */
   z-index: 0;
 }
 
@@ -175,7 +178,7 @@
 .hero .lead {
   font-size: 1.2rem;
   margin-bottom: 30px;
-  color: var(--brand-2)
+  color: rgba(255, 255, 255, 0.9);
 }
 
 .hero-cta .btn {
