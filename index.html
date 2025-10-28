@@ -302,19 +302,10 @@ fade-up.visible {
 
     /* Why */
 /* ===== Why Section with Bright Bear Icon ===== */
-.why-section {
-  position: relative;
-  background: linear-gradient(180deg, #fffdf8 0%, #fffaf2 100%);
-  padding: 60px 0;
-  overflow: hidden;
-}
-
-.section-title {
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-}
+    .why{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+    .why ul{list-style:none;padding:0;margin:0;display:grid;gap:12px}
+    .why li{background:#fff;border:1px solid #eee;padding:16px 18px;border-radius:16px;font-weight:600}
+    @media (max-width:900px){.why{grid-template-columns:1fr}}
 
 .bear-deco {
   width: 45px;
