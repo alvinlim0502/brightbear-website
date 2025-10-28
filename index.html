@@ -292,6 +292,7 @@
     .program h3{margin:10px 0 6px}
     .tag{display:inline-block;background:#f6f8fb;color:#29445c;border:1px solid #e9edf2;border-radius:999px;padding:6px 10px;font-size:12px;font-weight:700}
     @media (max-width:900px){.grid-3{grid-template-columns:1fr}}
+    
 fade-up.visible {
   opacity: 1;
   transform: translateY(0);
@@ -300,10 +301,45 @@ fade-up.visible {
     
 
     /* Why */
-    .why{display:grid;grid-template-columns:1fr 1fr;gap:28px}
-    .why ul{list-style:none;padding:0;margin:0;display:grid;gap:12px}
-    .why li{background:#fff;border:1px solid #eee;padding:16px 18px;border-radius:16px;font-weight:600}
-    @media (max-width:900px){.why{grid-template-columns:1fr}}
+/* ===== Why Section with Bright Bear Icon ===== */
+.why-section {
+  position: relative;
+  background: linear-gradient(180deg, #fffdf8 0%, #fffaf2 100%);
+  padding: 60px 0;
+  overflow: hidden;
+}
+
+.section-title {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.bear-deco {
+  width: 45px;
+  height: auto;
+  animation: floatBear 5s ease-in-out infinite, glowBear 3s ease-in-out infinite alternate;
+  filter: drop-shadow(0 0 6px rgba(255, 200, 120, 0.5));
+}
+
+/* Floating + glowing animation */
+@keyframes floatBear {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+@keyframes glowBear {
+  0% { filter: drop-shadow(0 0 3px rgba(255, 200, 120, 0.4)); }
+  100% { filter: drop-shadow(0 0 10px rgba(255, 200, 120, 0.9)); }
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+  .bear-deco {
+    width: 36px;
+  }
+}
 
     /* Gallery */
 /* Gallery wrapper hides overflow */
@@ -500,6 +536,7 @@ fade-up.visible {
     <div class="container why">
       <div>
         <h2 class="section-title">Why Families Choose Us</h2>
+        <img src="assets/bear-icon.png" alt="Bright Bear icon" class="bear-deco">
         <p class="section-lead">Similar clean structure you’re used to, but all fully branded to Bright Bear.</p>
         <ul>
           <li>Structured path to Primary 1 readiness (MoE‑aligned)</li>
