@@ -295,9 +295,36 @@
     @media (max-width:900px){.why{grid-template-columns:1fr}}
 
     /* Gallery */
-    .gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
-    .gallery img{height:170px;object-fit:cover;border-radius:12px}
-    @media (max-width:900px){.gallery{grid-template-columns:repeat(2,1fr)}}
+    /* Gallery - smooth sliding effect */
+.gallery {
+  display: flex;
+  overflow: hidden;
+  position: relative;
+}
+
+.gallery img {
+  flex: 0 0 25%; /* 4 images visible across */
+  height: 170px;
+  object-fit: cover;
+  border-radius: 12px;
+  animation: slideGallery 20s linear infinite;
+}
+
+/* Keyframes for smooth slide */
+@keyframes slideGallery {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
+
+/* Responsive layout for smaller screens */
+@media (max-width:900px) {
+  .gallery img {
+    flex: 0 0 50%; /* 2 images visible on mobile */
+    height: 150px;
+  }
+}
+
+
 
     /* Testimonials */
     .testis{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
@@ -474,14 +501,6 @@
         <img src="assets/Student.jpg" alt="Student"/>
         <img src="assets/Sing.jpg" alt="Sing"/>
         <img src="assets/Hall2.jpg" alt="Hall2"/>
-        <!img src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?q=80&w=1200&auto=format&fit=crop" alt="Classroom"/>
-        <!img src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?q=80&w=1200&auto=format&fit=crop" alt="Learning corner"/>
-        <!img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=1200&auto=format&fit=crop" alt="Art time"/>
-        <!img src="https://images.unsplash.com/photo-1596495578065-8baf0b3e2f5f?q=80&w=1200&auto=format&fit=crop" alt="Playground"/>
-        <!img src="https://images.unsplash.com/photo-1472162072942-cd5147eb3902?q=80&w=1200&auto=format&fit=crop" alt="Story time"/>
-        <!img src="https://images.unsplash.com/photo-1600607687920-4ce8c559d8df?q=80&w=1200&auto=format&fit=crop" alt="Blocks"/>
-        <!img src="https://images.unsplash.com/photo-1543364195-bfe6e4932397?q=80&w=1200&auto=format&fit=crop" alt="Piano"/>
-        <!img src="https://images.unsplash.com/photo-1504714146340-959ca07b7bbf?q=80&w=1200&auto=format&fit=crop" alt="Teamwork"/>
       </div>
     </div>
   </section>
@@ -503,7 +522,7 @@
     <div class="container contact">
       <div>
         <h2 class="section-title">Book a Tour</h2>
-        <p class="section-lead">Tell us your child’s age and preferred campus — we’ll reply you the soonest.</p>
+        <p class="section-lead">Tell us your child’s age — we’ll reply you the soonest.</p>
         <form id="waForm" onsubmit="submitToWhatsApp(event)">
           <label for="name">Parent Name</label>
           <input id="name" name="name" required />
