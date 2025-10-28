@@ -295,35 +295,52 @@
     @media (max-width:900px){.why{grid-template-columns:1fr}}
 
     /* Gallery */
-    /* Gallery - smooth sliding effect */
-.gallery {
-  display: flex;
+/* Gallery wrapper hides overflow */
+.gallery-wrapper {
   overflow: hidden;
   position: relative;
 }
 
+/* Gallery row slides infinitely */
+.gallery {
+  display: flex;
+  width: calc(200%); /* double width for looping */
+  animation: scrollGallery 30s linear infinite;
+}
+
+/* Each image */
 .gallery img {
-  flex: 0 0 25%; /* 4 images visible across */
+  flex: 0 0 25%; /* 4 visible per row on desktop */
   height: 170px;
   object-fit: cover;
   border-radius: 12px;
-  animation: slideGallery 20s linear infinite;
+  margin-right: 10px;
+  transition: transform 0.3s ease;
 }
 
-/* Keyframes for smooth slide */
-@keyframes slideGallery {
+/* Hover zoom effect */
+.gallery img:hover {
+  transform: scale(1.05);
+}
+
+/* Animation for infinite scroll */
+@keyframes scrollGallery {
   0% { transform: translateX(0); }
-  100% { transform: translateX(-100%); }
+  100% { transform: translateX(-50%); } /* moves half, repeats smoothly */
 }
 
-/* Responsive layout for smaller screens */
-@media (max-width:900px) {
+/* Pause animation on hover */
+.gallery-wrapper:hover .gallery {
+  animation-play-state: paused;
+}
+
+/* Mobile responsive */
+@media (max-width: 900px) {
   .gallery img {
     flex: 0 0 50%; /* 2 images visible on mobile */
     height: 150px;
   }
 }
-
 
 
     /* Testimonials */
@@ -493,17 +510,25 @@
   </section>
 
   <!-- Gallery -->
-  <section id="gallery" style="background:#fff">
-    <div class="container">
-      <h2 class="section-title">Peek Into Our Day</h2>
-      <div class="gallery" aria-label="School gallery">
+<section id="gallery" style="background:#fff">
+  <div class="container">
+    <h2 class="section-title">Peek Into Our Day</h2>
+    <div class="gallery-wrapper">
+      <div class="gallery">
+        <img src="assets/Hall.jpg" alt="Hall"/>
+        <img src="assets/Student.jpg" alt="Student"/>
+        <img src="assets/Sing.jpg" alt="Sing"/>
+        <img src="assets/Hall2.jpg" alt="Hall2"/>
+        <!-- duplicate images for seamless loop -->
         <img src="assets/Hall.jpg" alt="Hall"/>
         <img src="assets/Student.jpg" alt="Student"/>
         <img src="assets/Sing.jpg" alt="Sing"/>
         <img src="assets/Hall2.jpg" alt="Hall2"/>
       </div>
     </div>
-  </section>
+  </div>
+</section>
+
 
   <!-- Testimonials -->
   <section id="reviews">
