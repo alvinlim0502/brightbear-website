@@ -704,17 +704,7 @@ fade-up.visible {
     window.open(url, "_blank");
   }
 
-<script>
-  const elements = document.querySelectorAll('.fade-up');
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-      }
-    });
-  }, { threshold: 0.2 });
-  elements.forEach(el => observer.observe(el));
-</script>
+</script
 
 </body>
 </html>
