@@ -1,0 +1,21 @@
+{
+  "name": "Bright Bear Preschool",
+  "short_name": "BrightBear",
+  "description": "Bright Bear Preschool \u2014 nurturing happy, confident learners through play and purposeful practice.",
+  "icons": [
+    {
+      "src": "https://brightbear.com.my/assets/favicon-192x192.png?v=3",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "https://brightbear.com.my/assets/favicon-512x512.png?v=3",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#ffffff",
+  "background_color": "#ffffff"
+}
