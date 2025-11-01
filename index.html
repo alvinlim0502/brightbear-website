@@ -290,6 +290,34 @@
     .section-lead{opacity:.85;margin:0 0 30px}
 
     /* Programs */
+    /* Programs Section with Background Image */
+#programs {
+  position: relative;
+  background-image: url('assets/BG_Programs.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 80px 0;
+  color: #222;
+  overflow: hidden;
+}
+
+/* Add soft overlay for readability */
+#programs::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.8); /* adjust transparency if needed */
+  z-index: 0;
+}
+
+/* Ensure content sits above the overlay */
+#programs .container {
+  position: relative;
+  z-index: 1;
+}
+
+    
     .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
     .program{padding:24px;border-radius:18px;background:#fff;border:1px solid #efefef}
     .program h3{margin:10px 0 6px}
