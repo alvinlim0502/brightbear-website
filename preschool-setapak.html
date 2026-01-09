@@ -68,65 +68,826 @@
 }
 </script>
 
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bright Bear Preschool | Trusted Preschool in Setapak</title>
+
+<!-- Favicon and App Icons -->
+<link rel="icon" href="https://brightbear.com.my/assets/favicon.ico?v=3" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="https://brightbear.com.my/assets/favicon-32x32.png?v=3">
+<link rel="icon" type="image/png" sizes="16x16" href="https://brightbear.com.my/assets/favicon-16x16.png?v=3">
+<link rel="icon" type="image/png" sizes="192x192" href="https://brightbear.com.my/assets/favicon-192x192.png?v=3">
+<link rel="icon" type="image/png" sizes="512x512" href="https://brightbear.com.my/assets/favicon-512x512.png?v=3">
+<link rel="apple-touch-icon" sizes="180x180" href="https://brightbear.com.my/assets/favicon-180x180.png?v=3">
+<link rel="manifest" href="https://brightbear.com.my/assets/site.webmanifest">
+<meta name="theme-color" content="#ffffff">
+
+  <meta name="description" content="Looking for a preschool in Setapak? Bright Bear Preschool provides a safe, caring, play-based learning environment with experienced teachers. Book a visit today." />
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="Bright Bear Preschool">
+  <meta name="geo.region" content="MY-14">
+  <meta name="geo.placename" content="Setapak, Kuala Lumpur">
+  <meta name="geo.position" content="3.2150;101.7269">
+  <meta name="ICBM" content="3.2150, 101.7269">
+  
+  <meta property="og:title" content="Bright Bear Preschool | Trusted Preschool in Setapak">
+  <meta property="og:description" content="A trusted preschool in Setapak offering warm, play-based early childhood education in a safe and nurturing environment.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://brightbear.com.my">
+  <meta property="og:image" content="https://brightbear.com.my/assets/og-image.jpg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  />
+  
+  <style>
+    :root{
+      --brand:#FFB703; /* honey gold */
+      --brand-2:#023047;/* deep blue */
+      --accent:#FB8500; /* orange */
+      --mint:#8EEDD1;
+      --bg:#fffaf2;
+      --ink:#19324a;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:Poppins,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial,sans-serif;color:var(--ink);background:var(--bg)}
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+    .container{width:min(1200px,92%);margin-inline:auto}
+
+    /* Header */
+    header{position:sticky;top:0;z-index:30;background:#FFF5E9;box-shadow:0 1px 10px rgba(0,0,0,.06)}
+    /* Slim header override */
+    .nav {
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:6px 20px;
+      line-height:1;
+    }
+    .brand {
+      display:flex;
+      align-items:center;
+      gap:10px;
+    }
+    .brand img {
+      height:60px;   /* slim */
+      width:60px;
+      object-fit:contain;
+      margin:0;
+    }
+    .brand .title {
+      font-size:18px;
+      font-weight:800;
+      line-height:1.1;
+      margin:0;
+      color:var(--brand-2);
+    }
+    .brand .subtitle {
+      font-size:11px;
+      line-height:1.1;
+      margin:2px 0 0;
+      color:#6b7a8c;
+    }
+    nav ul {
+      display:flex;
+      align-items:center;
+      gap:20px;
+      list-style:none;
+      margin:0;
+      padding:0;
+      flex-wrap:nowrap;
+    }
+    nav a {
+      font-weight:600;
+      font-size:14px;
+      line-height:1;
+      padding:6px 4px;
+      white-space:nowrap;
+    }
+    .cta {
+      background:var(--accent);
+      color:#fff;
+      padding:6px 12px;
+      border-radius:999px;
+      font-weight:700;
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+    }
+    .menu-btn{display:none;background:none;border:0;font-size:28px}
+
+    /* Always hide mobile menu on desktop */
+    @media (min-width: 901px) {
+      .mobile { display: none !important; }
+    }
+
+    @media (max-width:900px){
+      nav ul{display:none}
+      .menu-btn{display:inline-block}
+      .mobile{position:absolute;inset:64px 0 auto 0;background:#fff;border-top:1px solid #eee;display:none}
+      .mobile a{display:block;padding:16px 24px;border-bottom:1px solid #f3f3f3}
+      .mobile .cta{margin:12px 24px 24px}
+      .mobile.open{display:block}
+    }
+
+    /* Hero */
+/* ===== HERO SECTION WITH PARALLAX EFFECT ===== */
+.hero {
+  position: relative;
+  isolation: isolate;
+  background-image: url('assets/BG_Programs_Resize.JPG');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* ✅ adds parallax */
+  color: white;
+  min-height: 100vh; /* full screen height */
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  overflow: hidden;
+}
+
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    rgba(50, 50, 50, 0.2),
+    rgba(50, 50, 50, 0.2)
+  ); /* soft overlay for readability */
+  z-index: 0;
+}
+
+.hero .wrap {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  text-align: left;
+  padding: 0 2rem;
+}
+
+.hero .content {
+  max-width: 700px;
+}
+
+.hero .badge {
+  background: var(--accent, #ffc107);
+  color: #222;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 20px;
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1.2;
+  Hero color: white;
+  /* Hero color: var(--brand-2);*/
+  margin-bottom: 20px;
+}
+
+.hero h1 .highlight {
+  color: var(--accent, #ffcc33);
+}
+
+.hero .lead {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.hero-cta .btn {
+  display: inline-block;
+  padding: 12px 24px;
+  font-weight: 600;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.3s ease;
+  margin-right: 12px;
+}
+
+.hero-cta .btn.primary {
+  background: var(--accent, #ffcc33);
+  color: #222;
+}
+
+.hero-cta .btn.primary:hover {
+  background: #ffda5c;
+}
+
+.hero-cta .btn.secondary {
+  border: 2px solid white;
+  color: white;
+}
+
+.hero-cta .btn.secondary:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* ===== MOBILE RESPONSIVE ADJUSTMENTS ===== */
+
+@media (max-width: 1024px) {
+  .hero {
+    background-image: url('assets/BG_Programs_Resize.JPG');
+    background-attachment: scroll; /* change to scroll to prevent mobile glitch */
+    min-height: 80vh;
+    text-align: center;
+    justify-content: center;
+    }
+  .hero h1 {
+    font-size: 1.5rem;
+  }
+  .hero .lead {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    background-image: url('assets/BG_Programs_Resize.JPG');
+    background-attachment: scroll; /* change to scroll to prevent mobile glitch */
+    min-height: 80vh;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .hero .wrap {
+    padding: 0 1.5rem;
+  }
+
+  .hero .content {
+    max-width: 90%;
+    margin: 0 auto;
+  }
+
+  .hero .badge {
+    margin-bottom: 16px;
+  }
+
+  .hero h1 {
+    font-size: 1.5rem;
+    line-height: 1.3;
+  }
+
+  .hero .lead {
+    font-size: 1rem;
+  }
+
+  .hero-cta .btn {
+    display: block;
+    margin: 10px auto;
+    width: fit-content;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    min-height: 70vh;
+  }
+
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero .lead {
+    font-size: 0.95rem;
+  }
+
+  .hero-cta .btn {
+    padding: 10px 20px;
+    font-size: 0.95rem;
+  }
+}
+
+    /* Sections */
+    section{padding:64px 0}
+    .section-title{font-size:clamp(24px,3.4vw,36px);margin:0 0 10px;color:var(--brand-2)}
+    .section-lead{opacity:.85;margin:0 0 30px}
+
+    /* Programs */
+    /* Programs Section with Background Image */
+#programs {
+  position: relative;
+  background-image: url('assets/BG_Programs_Resize.JPG');
+  background-attachment: fixed;  /* ✅ adds parallax */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 80px 0;
+  color: #222;
+  overflow: hidden;
+}
+
+/* Add soft overlay for readability */
+#programs::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.8); /* adjust transparency if needed */
+  z-index: 0;
+}
+
+/* Ensure content sits above the overlay */
+#programs .container {
+  position: relative;
+  z-index: 1;
+}
+
+    
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .program{padding:24px;border-radius:18px;background:#fff;border:1px solid #efefef}
+    .program h3{margin:10px 0 6px}
+    .tag{display:inline-block;background:#f6f8fb;color:#29445c;border:1px solid #e9edf2;border-radius:999px;padding:6px 10px;font-size:12px;font-weight:700}
+    @media (max-width:900px){.grid-3{grid-template-columns:1fr}}
+    
+fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+    
+
+    /* Why */
+/* ===== Why Section with Bright Bear Icon ===== */
+    .why{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+    .why ul{list-style:none;padding:0;margin:0;display:grid;gap:12px}
+    .why li{background:#fff;border:1px solid #eee;padding:16px 18px;border-radius:16px;font-weight:600}
+    @media (max-width:900px){.why{grid-template-columns:1fr}}
+
+.bear-deco {
+  width: 45px;
+  height: auto;
+  animation: floatBear 5s ease-in-out infinite, glowBear 3s ease-in-out infinite alternate;
+  filter: drop-shadow(0 0 6px rgba(255, 200, 120, 0.5));
+}
+
+/* Floating + glowing animation */
+@keyframes floatBear {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+@keyframes glowBear {
+  0% { filter: drop-shadow(0 0 3px rgba(255, 200, 120, 0.4)); }
+  100% { filter: drop-shadow(0 0 10px rgba(255, 200, 120, 0.9)); }
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+  .bear-deco {
+    width: 36px;
+  }
+}
+
+    /* Gallery */
+/* Gallery wrapper hides overflow */
+.gallery-wrapper {
+  overflow: hidden;
+  position: relative;
+}
+
+/* Gallery row slides infinitely */
+.gallery {
+  display: flex;
+  width: max-content; /* fit all images in a single row */
+  animation: scrollGallery 30s linear infinite; /* longer duration for smoother scroll */
+}
+
+/* Each image */
+.gallery img {
+  flex: 0 0 auto; /* 25% =4 visible per row on desktop */
+  height: 250px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-right: 10px;
+  transition: transform 0.3s ease;
+}
+
+/* Hover zoom effect */
+.gallery img:hover {
+  transform: scale(1.05);
+}
+
+/* Animation for infinite scroll */
+@keyframes scrollGallery {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); } /* 50%= moves half, repeats smoothly */
+}
+
+/* Pause animation on hover */
+.gallery-wrapper:hover .gallery {
+  animation-play-state: paused;
+}
+
+/* Mobile responsive */
+@media (max-width: 900px) {
+  .gallery img {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+
+    /* Testimonials */
+    .testis{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .quote{background:#fff;border:1px solid #eee;border-radius:16px;padding:18px}
+    .quote p{margin:0 0 10px}
+    .author{font-weight:700}
+    @media (max-width:900px){.testis{grid-template-columns:1fr}}
+
+    /* Contact */
+    .contact{display:grid;grid-template-columns:1.1fr .9fr;gap:24px}
+    .contact form{background:#fff;border:1px solid #eee;padding:18px;border-radius:16px}
+    .contact label{display:block;font-weight:700;margin:12px 0 6px}
+    .contact input,.contact textarea{width:100%;padding:12px 14px;border:1px solid #e5e7eb;border-radius:10px;font:inherit}
+    .contact button{margin-top:12px}
+    @media (max-width:900px){.contact{grid-template-columns:1fr}}
+
+    /* Footer */
+    footer{background:var(--brand-2);color:#e8f0f7;padding:36px 0 24px}
+    .foot{display:grid;grid-template-columns:2fr 1fr 1fr;gap:18px}
+    .foot h4{margin:0 0 10px}
+    .foot a{opacity:.9}
+    .copyright{opacity:.7;margin-top:18px;font-size:14px}
+    @media (max-width:900px){.foot{grid-template-columns:1fr}}
+
+    /* Utilities */
+    .btn{display:inline-flex;align-items:center;gap:8px;padding:12px 18px;border-radius:12px;border:2px solid var(--brand-2);font-weight:800}
+    .btn.primary{background:var(--brand-2);color:white;border-color:var(--brand-2)}
+    .btn.ghost{background:transparent;color:var(--brand-2)}
+    .chip{display:inline-block;padding:6px 10px;border-radius:999px;background:#fff;border:1px dashed #ddd;font-weight:700}
+  </style>
 </head>
-
 <body>
+  <!-- Header -->
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#home" aria-label="Bright Bear Preschool home">
+        <img class="logo" src="assets/logo.png" alt="Bright Bear logo" />
+        <div>
+          <div class="title">Bright Bear Preschool</div>
+          <span class="subtitle">Learn • Play • Grow</span>
+        </div>
+      </a>
+      <nav>
+        <button class="menu-btn" aria-label="Open menu" onclick="toggleMenu()">☰</button>
+        <ul aria-label="Primary navigation">
+          <li><a href="#about">About</a></li>
+          <li><a href="#programs">Programmes</a></li>
+          <li><a href="#why">Why Us</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#contact" class="cta">Enquire Now</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="mobile" id="mobileMenu">
+      <a href="#about" onclick="toggleMenu(false)">About</a>
+      <a href="#programs" onclick="toggleMenu(false)">Programmes</a>
+      <a href="#why" onclick="toggleMenu(false)">Why Us</a>
+      <a href="#gallery" onclick="toggleMenu(false)">Gallery</a>
+      <a class="cta" href="#contact" onclick="toggleMenu(false)">Enquire Now</a>
+    </div>
+  </header>
 
-  <!-- HEADER (reuse your existing header/nav if any) -->
+  <!-- Hero -->
+<section id="home" class="hero">
+  <div class="container wrap">
+    <div class="content">
+      <span class="badge">Now enrolling — 3 to 6 years</span>
+      <h1>
+        Leading Preschool in Setapak with
+        Warm Hearts, Curious Minds,        
+                   
+        <span class="highlight">Ready for Primary 1</span>
+      </h1>
+      <p class="lead">
+        We blend joyful play with strong literacy & numeracy, music (piano time!), 
+        and character building — designed to meet Malaysia MoE standards.
+      </p>
+      <div class="hero-cta">
+        <a class="btn primary" href="#contact">Book a School Tour</a>
+        <a class="btn secondary" href="#programs">View Programmes</a>
+      </div>
+    </div>
+  </div>
+</section>
 
-  <main class="container">
+  <!-- About -->
+  <section id="about">
+    <div class="container">
+      <h2 class="section-title">About Bright Bear</h2>
+      <p class="section-lead">A neighbourhood preschool with a loving team, modern classrooms, and a curriculum that grows with your child from playful discovery to Primary 1 readiness.</p>
+      <div class="grid-3">
+        <div class="program">
+          <span class="tag">Ages 3-4 </span>
+          <h3>Early Years (Playgroup)</h3>
+          <p>Sensory play, music & movement, language exposure, and social skills in a cosy, safe environment.</p>
+        </div>
+        <div class="program">
+          <span class="tag">Ages 5</span>
+          <h3>Kindy Foundations</h3>
+          <p>Thematic discovery projects, phonics, pre‑writing, Mandarin basics, and gentle maths.</p>
+        </div>
+        <div class="program">
+          <span class="tag">Ages 6</span>
+          <h3>Primary Prep</h3>
+          <p>Stronger English, BM & Mandarin reading, problem‑solving maths, science starters, and study habits.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <h1>Preschool in Setapak, Kuala Lumpur</h1>
+  <!-- Programs -->
+  <section id="programs" sclass="fade-up">
+    <div class="container">
+      <h2 class="section-title">Programmes & Highlights</h2>
+      <p class="section-lead">Balanced academics + joyful enrichment to build confidence.</p>
+      <div class="grid-3">
+        <div class="program">
+          <h3>Literacy & Numeracy</h3>
+          <p>Systematic phonics, sight words, storytelling; hands‑on maths with concrete materials.</p>
+        </div>
+        <div class="program">
+          <h3>Music & Piano Time</h3>
+          <p>Weekly piano lab and rhythm games to improve focus, memory, and fine motor skills.</p>
+        </div>
+        <div class="program">
+          <h3>Digital Corners</h3>
+          <p>Teacher‑guided tablets and coding toys (no ads) to explore patterns, logic, and creativity.</p>
+        </div>
+        <div class="program">
+          <h3>Character & Life Skills</h3>
+          <p>Kindness, independence, and teamwork through chores, role‑play, and class responsibilities.</p>
+        </div>
+        <div class="program">
+          <h3>Languages</h3>
+          <p>English, Bahasa Malaysia, and Mandarin tracks with daily practice and songs.</p>
+        </div>
+        <div class="program">
+          <h3>Safe & Caring</h3>
+          <p>CCTV at entrances, secure pickup, and regular parent updates via our app.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <p>
-      Bright Bear Preschool KLTS is a trusted preschool in Setapak, Kuala Lumpur,
-      offering quality early childhood education for toddlers and preschoolers.
-      We nurture confident, happy learners through play-based and purposeful learning.
-    </p>
+  <!-- Why Us -->
+  <section id="why">
+    <div class="container why">
+      <div>
+        <h2 class="section-title">Why Families Choose Us</h2>
+       
+        <p class="section-lead">Similar clean structure you’re used to, but all fully branded to Bright Bear.</p>
+        <ul>
+          <li>Structured path to Primary 1 readiness (MoE‑aligned)</li>
+          <li>Teacher:child ratio that ensures attention</li>
+          <li>Daily parent updates (meals, naps, photos)</li>
+          <li>Qualified educators trained in phonics & early numeracy</li>
+          <li>Affordable fees </li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3 style="margin:0 0 8px">School Hours</h3>
+        <p style="margin:0 0 12px">Mon–Fri • 8:00am – 6:00pm</p>
+        <h3 style="margin:10px 0 8px">Locations</h3>
+        <p style="margin:0">39-1, BLK A, KL Traders Square • Setapak</p>
+        <div style="height:12px"></div>
+        <a class="btn primary" href="#contact">Ask About Availability</a>
+         <img src="assets/bear-icon.png" alt="Bright Bear icon" class="bear-deco">
+      </div>
+    </div>
+  </section>
 
-    <h2>Why Choose Bright Bear Preschool in Setapak?</h2>
-    <ul>
-      <li>Play-based and structured early learning</li>
-      <li>Caring and experienced preschool teachers</li>
-      <li>Safe, nurturing, and engaging environment</li>
-      <li>Strong partnership with parents</li>
-    </ul>
+  <!-- Gallery -->
+<section id="gallery" style="background:#fff">
+  <div class="container">
+    <h2 class="section-title">Peek Into Our Day</h2>
+    <div class="gallery-wrapper">
+      <div class="gallery">
+        <img src="assets/Hall.jpg" alt="Hall"/>
+        <img src="assets/Student.jpg" alt="Student"/>
+        <img src="assets/Hall2.jpg" alt="Hall2"/>         
+        <img src="assets/read.JPG" alt="read"/>
+        <img src="assets/plant.JPG" alt="plant"/>
+        <img src="assets/playground.JPG" alt="playground"/>
+        <img src="assets/class.jpg" alt="class"/>
+        <img src="assets/Sing.jpg" alt="Sing"/>
+        <img src="assets/Activity1.jpg" alt="Activity1"/>
+        <img src="assets/Activity2.jpg" alt="Activity2"/>
+        <img src="assets/Activity3.jpg" alt="Activity3"/>
+        <img src="assets/Activity4.jpg" alt="Activity4"/>
+        <img src="assets/Activity5.jpg" alt="Activity5"/>
+        <img src="assets/Activity6.jpg" alt="Activity6"/>
+        <img src="assets/Activity7.jpg" alt="Activity7"/>
+        <img src="assets/Activity8.jpg" alt="Activity8"/>
+        <!-- duplicate images for seamless loop -->
+        <img src="assets/Hall.jpg" alt="Hall"/>
+        <img src="assets/Student.jpg" alt="Student"/>
+        <img src="assets/Hall2.jpg" alt="Hall2"/>
+        <img src="assets/read.JPG" alt="read"/>
+        <img src="assets/plant.JPG" alt="plant"/>
+        <img src="assets/playground.JPG" alt="playground"/>
+        <img src="assets/class.jpg" alt="class"/>
+        <img src="assets/Sing.jpg" alt="Sing"/>
+        <img src="assets/Activity1.jpg" alt="Activity1"/>
+        <img src="assets/Activity2.jpg" alt="Activity2"/>
+        <img src="assets/Activity3.jpg" alt="Activity3"/>
+        <img src="assets/Activity4.jpg" alt="Activity4"/>
+        <img src="assets/Activity5.jpg" alt="Activity5"/>
+        <img src="assets/Activity6.jpg" alt="Activity6"/>
+        <img src="assets/Activity7.jpg" alt="Activity7"/>
+        <img src="assets/Activity8.jpg" alt="Activity8"/>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <h2>Our Preschool Programmes</h2>
-    <p>
-      Our programmes focus on language development, early numeracy, creativity,
-      social skills, and school readiness—helping children build a strong foundation
-      for lifelong learning.
-    </p>
 
-    <h2>Convenient Location in Setapak</h2>
-    <p>
-      Located in Setapak, Kuala Lumpur, our preschool is easily accessible for families
-      from Wangsa Maju, Melawati, and nearby areas.
-    </p>
+  <!-- Testimonials -->
+  <section id="reviews">
+    <div class="container">
+      <h2 class="section-title">Parents Say…</h2>
+      <div class="testis">
+        <div class="quote"><p>“We are so thankful to have found this preschool. The teachers are warm, patient, and genuinely care for each child, creating a safe and nurturing environment”</p><div class="author">— L. Wong</div></div>
+        <div class="quote"><p>“We’ve had a wonderful experience with Bright Bear Preschool. The teachers are warm, caring, and attentive to each child’s needs”</p><div class="author">— J. Sew </div></div>
+        <div class="quote"><p>“Bright Bear Preschool has provided both of our children with a safe, supportive, and inspiring place to learn and grow. We are very happy with our choice and would highly recommend the school to other parents”</p><div class="author">— A. Aris</div></div>
+      </div>
+    </div>
+      <!-- Add this button below testimonials -->
+    <div class="review-cta" style="text-align:center; margin-top:30px;">
+      <a href="https://www.google.com/search?sca_esv=89c0b9e6faeb52cb&rlz=1C1VDKB_enMY1038MY1038&sxsrf=AE3TifPFO0JaeJ8vK31KCIRI9hS8IAu5Hg:1761838549258&si=AMgyJEtREmoPL4P1I5IDCfuA8gybfVI2d5Uj7QMwYCZHKDZ-E3NJ2L55IqZjZaylkS8CMVZWSGnHprnq2Iw1cpIDBKfs_CvIVjPDMQkgKROVh6ZtjCNsctWLJnkknL9O1B4NI4teXKNUo2RYLy6kbKnVGLePOhZb1A%3D%3D&q=Bright+Bear+Preschool+KLTS+Reviews&sa=X&ved=2ahUKEwiCgoWHoMyQAxUd2DgGHb1oOqsQ0bkNegQIHhAE&biw=1440&bih=731&dpr=2#" 
+         target="_blank" 
+         class="btn primary"
+         style="text-decoration:none;">
+         ⭐ Read More Reviews on Google
+      </a>
+    </div>
+  </div>
+  
+  </section>
 
-    <!-- Google Map Embed -->
+  <!-- Contact -->
+  <section id="contact" style="background:#fff">
+    <div class="container contact">
+      <div>
+        <h2 class="section-title">Book a Tour</h2>
+        <p class="section-lead">Tell us your child’s age — we’ll reply you the soonest.</p>
+        <form id="waForm" onsubmit="submitToWhatsApp(event)">
+          <label for="name">Parent Name</label>
+          <input id="name" name="name" required />
+
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" required />
+
+          <label for="phone">Phone</label>
+          <input id="phone" name="phone" type="tel" />
+
+          <label for="message">Child age & notes</label>
+          <textarea id="message" name="message" rows="5"></textarea>
+
+          <button class="btn primary" type="submit">Submit via WhatsApp</button>
+        </form>
+      </div>
+      <div>
+        <div class="card">
+          <h3 style="margin:0 0 10px">Contact Us</h3>
+          <p style="margin:0 0 8px">✉️ <a href="mailto:brightbear.klts@gmail.com" style="color:#29445c; text-decoration:none;">brightbear.klts@gmail.com
+                </a></p>
+          <p style="margin:0 0 8px">📞 <a href="tel:+60176002267" style="text-decoration:none; color:inherit;">+60 17-600 2267
+              </a></p>
+          <p style="margin:0">📍 39-1， Block A, KL Traders Square, Jalan Gombak, Setapak, Kuala Lumpur</p></p>
+
+  <!-- Waze Button -->
+  <a href="waze://hw2864r4n9&navigate=yes"
+     onclick="window.location='https://waze.com/ul/hw2864r4n9&navigate=yes';"
+     target="_blank"
+     style="text-decoration:none; background:#05C3DD; color:white; padding:4px 10px; border-radius:6px;">
+    <i class="fab fa-waze"></i> Waze
+  </a>
+</p>
+  <!-- Google Maps Button -->
+  <a href="https://maps.app.goo.gl/bLcVVLzDHMPERUZ17"
+     target="_blank"
+     style="text-decoration:none; background:#34A853; color:white; padding:4px 10px; border-radius:6px;">
+    <i class="fab fa-google"></i> Maps
+  </a>
+</p>    
+          <div style="height:10px"></div>
+          <a class="btn ghost" href="https://wa.me/60176002267" target="_blank" style="text-decoration:none; color:#25D366;" rel="noopener">
+              <i class="fab fa-whatsapp"></i> WhatsApp
+          </a>
+  </p>          
+          <a class="btn ghost" href="assets/OpenDay.JPG" download>
+            Download Open Day Flyer
+          </a>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+<footer>
+  <div class="container foot">
+    <div>
+      <h4>Bright Bear Preschool</h4>
+      <p>We nurture happy, confident learners through play and purposeful practice.</p>
+    </div>
+
+    <div>
+      <h4>Quick Links</h4>
+      <a href="#about">About</a><br/>
+      <a href="#programs">Programmes</a><br/>
+      <a href="/preschool-setapak">Preschool in Setapak</a><br/>
+      <a href="#contact">Admissions</a>
+    </div>
+
+    <div>
+      <h4>Follow</h4>
+      <div class="social-links">
+        <a href="https://www.facebook.com/profile.php?id=61579072864211" target="_blank">
+          <i class="fab fa-facebook"></i> Facebook
+        </a><br/>
+        <a href="https://www.instagram.com/brightbear_klts" target="_blank">
+          <i class="fab fa-instagram"></i> Instagram
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 🔥 GOOGLE MAP EMBED (ADD HERE) -->
+  <div class="container footer-map">
+    <h4>Bright Bear Preschool – Preschool in Setapak</h4>
     <iframe
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3983.582989583231!2d101.70068197497132!3d3.2036671967715318!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cc470cf96b62bf%3A0x52feaa698c1e7a2c!2sBright%20Bear%20Preschool%20KLTS%2C%20Setapak!5e0!3m2!1sen!2smy!4v1767934540989!5m2!1sen!2smy"
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3983.582367676444!2d101.703395!3d3.2038270000000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cc470cf96b62bf%3A0x52feaa698c1e7a2c!2sBright%20Bear%20Preschool%20KLTS%20-%20Setapak!5e0!3m2!1sen!2smy!4v1767973387527!5m2!1sen!2smy"
       width="100%"
-      height="300"
+      height="250"
       style="border:0; border-radius:12px;"
+      allowfullscreen=""
       loading="lazy"
-      allowfullscreen
       referrerpolicy="no-referrer-when-downgrade"
-      title="Bright Bear Preschool Location in Setapak">
-    </iframe>
+      title="Bright Bear Preschool Location in Setapak"
+    ></iframe>
+    <p class="map-address">📍 Setapak, Kuala Lumpur</p>
+  </div>
 
-    <h2>Visit Bright Bear Preschool KLTS</h2>
-    <p>
-      📍 Setapak, Kuala Lumpur<br>
-      📞 +60 17-600 2267<br>
-      🌐 <a href="https://brightbear.com.my">brightbear.com.my</a>
-    </p>
+  <div class="container copyright">
+    © <span id="year"></span> Bright Bear Preschool. All rights reserved.
+  </div>
+</footer>
 
-  </main>
 
-  <!-- FOOTER (reuse same footer as homepage) -->
+
+  <script>
+    function toggleMenu(force){
+      const m = document.getElementById('mobileMenu');
+      const open = typeof force === 'boolean' ? force : !m.classList.contains('open');
+      m.classList.toggle('open', open);
+    }
+    document.getElementById('year').textContent = new Date().getFullYear();
+    
+    // Set your WhatsApp number here (international format, no +, no spaces)
+  const BRIGHT_BEAR_WA = "60176002267";
+
+  function submitToWhatsApp(e) {
+    e.preventDefault();
+
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const phone = document.getElementById('phone').value.trim();
+    const notes = document.getElementById('message').value.trim();
+
+    const lines = [
+      "Hello Bright Bear,",
+      "",
+      "I would like to book a school tour.",
+      "",
+      `Parent Name: ${name}`,
+      `Email: ${email}`,
+      `Phone: ${phone}`,
+      `Child/Notes: ${notes}`,
+      "",
+      "Thanks!"
+    ];
+
+    const text = encodeURIComponent(lines.join("\n"));
+    const url = `https://wa.me/${BRIGHT_BEAR_WA}?text=${text}`;
+    window.open(url, "_blank");
+  }
+
+</script
 
 </body>
 </html>
